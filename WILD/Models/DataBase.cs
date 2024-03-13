@@ -10,7 +10,7 @@ namespace WILD.Models
 {
     class DataBase
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-VINGOMG;Initial Catalog=Kk;Integrated Security=True;TrustServerCertificate = True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-VINGOMG;Initial Catalog=Kak;Integrated Security=True;TrustServerCertificate = True");
 
         public void openConnection()
         {
@@ -32,5 +32,32 @@ namespace WILD.Models
         {
             return sqlConnection;
         }
+
+        public bool IsLoginValid(string username, string password)
+        {
+            using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password", sqlConnection))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+                openConnection();
+                int userCount = (int)cmd.ExecuteScalar();
+                closeConnection();
+                return userCount > 0;
+            }
+        }
+
+        public string GetUserRole(string username, string password)
+        {
+            using (SqlCommand cmd = new SqlCommand("SELECT Role FROM Users WHERE Username = @username AND Password = @password", sqlConnection))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+                openConnection();
+                object result = cmd.ExecuteScalar();
+                closeConnection();
+                return result as string;
+            }
+        }
+
     }
 }

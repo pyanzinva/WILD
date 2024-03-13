@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Окно авторизации" Height="150" Width="250">
     <Grid>
-        <TextBox x:Name="usernameTextBox" HorizontalAlignment="Center" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding User.Username}" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Center" Height="23" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Username" HorizontalAlignment="Center" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Center" Height="23" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="loginButton" Content="Войти" HorizontalAlignment="Center" Margin="10,76,0,0" VerticalAlignment="Top" Width="75" Command="{Binding LoginCommand}"/>
         <TextBlock HorizontalAlignment="Left" Margin="21,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="49"><Run Language="ru-ru" Text="Логин"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="21,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="49"><Run Language="ru-ru" Text="Пароль"/></TextBlock>

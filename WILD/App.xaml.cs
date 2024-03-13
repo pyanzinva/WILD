@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
 namespace WILD
 {
@@ -9,6 +7,13 @@ namespace WILD
     /// </summary>
     public partial class App : Application
     {
-    }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
 
+            LoginView loginView = new LoginView();
+            this.MainWindow = loginView;
+            this.MainWindow.Show();
+        }
+    }
 }
