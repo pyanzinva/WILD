@@ -41,7 +41,6 @@ namespace WILD.Models
         {
             new Record { Id = 1, ProductType = "Товар 1", Quantity = 10, Supplier = "Поставщик 1", Price = 100 },
             new Record { Id = 2, ProductType = "Товар 2", Quantity = 20, Supplier = "Поставщик 2", Price = 200 }
-            // Добавьте больше записей по мере необходимости
         };
 
             DeleteCommand = new RelayCommand(DeleteSelectedRecords);

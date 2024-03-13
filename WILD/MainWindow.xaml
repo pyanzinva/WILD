@@ -25,6 +25,7 @@
                     </Style>
                 </TextBox.Style>
             </TextBox>
+            <Button Content="Лупа" Margin="5"/>
             <Button Content="Фильтр" Margin="5"/>
             <Button Content="Сортировка" Margin="5"/>
         </StackPanel>
@@ -54,7 +55,7 @@
             <Label Content="AdminMenu" DockPanel.Dock="Top" HorizontalAlignment="Right"/>
             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="5">
                 <StackPanel Orientation="Vertical" Width="170">
-                    <Button Content="Новая запись" Margin="5"/>
+                    <Button Content="Новая запись" Margin="5" />
                     <Button Content="Удалить" Margin="5"/>
                     <Button Content="Изменить" Margin="5"/>
                     <Button Content="Сохранить" Margin="5"/>

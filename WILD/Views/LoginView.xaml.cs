@@ -19,9 +19,20 @@ namespace WILD
     /// </summary>
     public partial class LoginView : Window
     {
+        private LoginViewModel _viewModel;
+
         public LoginView()
         {
             InitializeComponent();
+            _viewModel = new LoginViewModel();
+            this.DataContext = _viewModel;
+            Password.PasswordChanged += PasswordBox_PasswordChanged;
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Password = Password.Password;
         }
     }
+
 }
